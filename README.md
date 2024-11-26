@@ -3,13 +3,6 @@
 ## Overview
 A robust URL shortening service built with Node.js, Express, and MongoDB.
 
-## Features
-- Shorten long URLs
-- Redirect to original URLs
-- Track URL usage statistics
-- Rate limiting
-- URL validation
-
 ## Prerequisites
 - Node.js 
 - MongoDB
@@ -37,27 +30,20 @@ npm start  # Development with nodemon
 
 ## API Endpoints
 
+## deployed Url - https://url-shortner-backend-dmhj.onrender.com
+
 ### Shorten URL
 `POST /shorten`
 - Request Body: `{ "originalUrl": "https://example.com" }`
-- Generates a unique short URL
+- Response: `{"shortUrl":"http://localhost:3000/Rg123fZIb","shortId":"Rg123fZIb"}`
 
 ### Redirect
 `GET /:shortId`
 - Redirects to the original URL
-- Increments click count
 
 ### URL Statistics
 `GET /stats/:shortId`
-- Returns usage statistics for a shortened URL
-
-## Rate Limiting
-- Maximum 100 URL creation requests per minute per IP
-
-## Error Handling
-- Validates URL format
-- Handles duplicate URLs
-- Provides meaningful error responses
+- Response: `{"originalUrl":"https://elemental-freighter-b7f.notion.site/Backend-Task-14adef0a0c2d8042b90bdea493678751","totalClicks":5,"lastAccessedAt":"2024-11-26T18:23:45.803Z","createdAt":"2024-11-26T16:54:10.420Z"}`
 
 
 Let me break down the key aspects of this URL Shortener API implementation:
