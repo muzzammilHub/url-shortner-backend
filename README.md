@@ -48,6 +48,8 @@ npm start  # Development with nodemon
 
 Let me break down the key aspects of this URL Shortener API implementation:
 
+0. Create .env and do copy from .env.sample
+
 1. **Project Structure**
    - Modular design with separate concerns
    - Clear separation between routes, controllers, models, and middleware
