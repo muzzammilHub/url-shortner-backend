@@ -9,7 +9,7 @@ const shortenUrl = async (req, res) => {
     let existingUrl = await Url.findOne({ originalUrl });
     if (existingUrl) {
       return res.status(200).json({
-        shortUrl: `http://localhost:3000/${existingUrl.shortId}`,
+        shortUrl: `${req.protocol}://${req.get('host')}/${existingUrl.shortId}`,
         shortId: existingUrl.shortId
       });
     }
@@ -26,7 +26,7 @@ const shortenUrl = async (req, res) => {
     await newUrl.save();
 
     res.status(201).json({
-      shortUrl: `http://localhost:3000/${shortId}`,
+      shortUrl: `${req.protocol}://${req.get('host')}/${shortId}`,
       shortId
     });
   } catch (error) {
